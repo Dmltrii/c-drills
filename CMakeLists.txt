@@ -31,7 +31,7 @@ function(add_drill name)
 
   foreach(target ${name} ${name}_tests)
     target_compile_options(${target} PRIVATE
-      -Wall -Wextra -Werror
+      -Wall -Wextra -Werror -Wconversion -Wsign-conversion
       -fsanitize=address,undefined -fno-sanitize-recover=all)
     target_link_options(${target} PRIVATE
       -fsanitize=address,undefined)
