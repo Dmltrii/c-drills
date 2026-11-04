@@ -1,0 +1,1 @@
+add_drill(popcount SOURCES popcount.cpp TESTS popcount_test.cpp)
