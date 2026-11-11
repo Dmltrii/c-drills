@@ -40,5 +40,5 @@ function(add_drill name)
   gtest_discover_tests(${name}_tests)
 endfunction()
 
-# add_subdirectory(w05d1_popcount)
+add_subdirectory(w05d1_popcount)
 add_subdirectory(w05d2_matrix)
