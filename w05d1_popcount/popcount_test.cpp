@@ -6,28 +6,22 @@
 
 namespace
 {
-    struct Case 
-    {
-        std::uint32_t input;
-        int expected;
-    };
+struct Case
+{
+    std::uint32_t input;
+    int expected;
+};
 
+constexpr Case kCases[]{
+    {0x00000000u, 0},  {0x00000001u, 1},  {0x80000000u, 1},
+    {0xFFFFFFFFu, 32}, {0xAAAAAAAAu, 16}, {0x0F0F0F0Fu, 16},
+};
 
-    constexpr Case kCases[]
-    {
-        {0x00000000u, 0},
-        {0x00000001u, 1},
-        {0x80000000u, 1},
-        {0xFFFFFFFFu, 32},
-        {0xAAAAAAAAu, 16},
-        {0x0F0F0F0Fu, 16},
-    };
-
-}
+} // namespace
 
 TEST(Popcount, AllImplementationsMatchHandCountedValues)
 {
-    for (const Case& c:kCases)
+    for (const Case& c : kCases)
     {
         SCOPED_TRACE(c.input);
         EXPECT_EQ(popcount_loop(c.input), c.expected);

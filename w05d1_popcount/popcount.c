@@ -2,22 +2,22 @@
 
 int popcount_loop(uint32_t n)
 {
-    int count=0;
-    while(n)
+    int count = 0;
+    while (n)
     {
-        count += (int) (n & 1u); 
+        count += (int)(n & 1u);
         n = n >> 1;
     }
-    return count; 
+    return count;
 }
 
 int popcount_kernighan(uint32_t n)
 {
-    int count=0;
-    while(n)
+    int count = 0;
+    while (n)
     {
         count++;
-        n&=n-1;
+        n &= n - 1;
     }
     return count;
 }

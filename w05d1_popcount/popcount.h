@@ -4,12 +4,13 @@
 #include <stdint.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-int popcount_loop(uint32_t n);
-int popcount_kernighan(uint32_t n);
-int popcount_builtin(uint32_t n);
+    int popcount_loop(uint32_t n);
+    int popcount_kernighan(uint32_t n);
+    int popcount_builtin(uint32_t n);
 
 #ifdef __cplusplus
 }
